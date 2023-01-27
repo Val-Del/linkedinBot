@@ -16,7 +16,7 @@
 #monBtn2 {
     width: 150px;
     position: fixed;
-    top: 52px;
+    top: 100px;
     left: 20px;
     border: solid 3px #0072b1;
     background-color: #eef3f8;
@@ -31,7 +31,7 @@
 #stop {
      width: 150px;
     position: fixed;
-    top: 100px;
+    top: 52px;
     left: 20px;
     border: solid 3px #0072b1;
     background-color: #eef3f8;
