@@ -5,9 +5,10 @@
 .inputSliderMin{
     margin-right: -3px;
     background-color: aqua;
+    direction: rtl;
 }
 
 .inputSliderMax{
     margin-left: -3px;
-    direction: rtl;
+    
 }
