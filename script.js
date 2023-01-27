@@ -72,7 +72,29 @@ document.body.appendChild(stop);
 
 function random(min, max) {
     rdm = Math.floor(Math.random() * (max - min + 1) + min)
-    rdmNumber.innerHTML = rdm;
-    rdmNumber.classList.add('timer')
+    rdm = Math.floor(rdm/100)*100; //arrondir ex : 5112 > 5100 
+    decreaseTimer(rdm)
+    
     return rdm
+}
+function decreaseTimer(timer){
+    if (keepGoing === true) {
+        rdmNumber.classList.add('timer')
+        rdmNumber.innerHTML = timer;
+        let chrono = setInterval(() => {
+            if (keepGoing === true) {
+                timer -= 100;
+                rdmNumber.innerHTML = timer;
+                if (timer<100) {
+                    divTimer.innerHTML = 0;
+                    clearInterval(chrono);
+                }
+            }else {
+                clearInterval(chrono);
+            }
+            
+        }, 100);
+    }else{
+        clearInterval(chrono);
+    }
 }
