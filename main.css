@@ -13,7 +13,7 @@
     letter-spacing: 3px;
     z-index: 1000000;
 }
-#monBtn2 {
+#btnDelete {
     width: 150px;
     position: fixed;
     top: 100px;
