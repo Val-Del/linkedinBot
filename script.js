@@ -16,20 +16,20 @@ btnAdd.onclick = function () {
     var buttons = document.querySelectorAll('.artdeco-modal__content footer .artdeco-button__text');
     var index = 0;
     function timeOut() {
-        if(keepGoing === true) {
-            setTimeout(()=>{
-                if(buttons[index] == undefined) {
+        if (keepGoing === true) {
+            setTimeout(() => {
+                if (buttons[index] == undefined) {
                     buttons = document.querySelectorAll('.artdeco-modal__content footer .artdeco-button__text');
                 }
                 buttons[index++].click();
                 timeOut()
-            }, random(4000,9000))
-        }else{
+            }, random(4000, 9000))
+        } else {
             rdmNumber.innerHTML = "Arrêt";
         }
     }
     timeOut()
-    };
+};
 
 document.body.appendChild(btnAdd);
 
@@ -44,21 +44,19 @@ btnDelete.onclick = function () {
     buttons
     var index = 0;
     function timeOutDel() {
-        if(keepGoing === true) {
-            setTimeout(()=>{
-                if(buttons[index] == undefined) {
+        if (keepGoing === true) {
+            setTimeout(() => {
+                if (buttons[index] == undefined) {
                     buttons = document.querySelectorAll('.invitation-card__action-container .artdeco-button__text');
                 }
                 buttons[index++].click();
-                setTimeout(() => {  document.querySelector('.artdeco-modal--layer-confirmation .artdeco-button--primary').click(); }, 1000);
+                setTimeout(() => { document.querySelector('.artdeco-modal--layer-confirmation .artdeco-button--primary').click(); }, 1000);
                 timeOutDel()
-            }, random(4000,9000))  
-        }else{
-            rdmNumber.innerHTML = "Arrêt";
-        }        
+            }, random(4000, 9000))
+        }
     }
     timeOutDel()
-    };
+};
 document.body.appendChild(btnDelete);
 
 let stop = document.createElement("button");
@@ -67,11 +65,14 @@ stop.type = "submit";
 stop.id = "stop";
 stop.onclick = function () {
     keepGoing = false
+    rdmNumber.innerHTML = "Arrêt";
+    rdmNumber.classList.remove('timer')
 }
 document.body.appendChild(stop);
 
-function random(min, max) { 
+function random(min, max) {
     rdm = Math.floor(Math.random() * (max - min + 1) + min)
-   rdmNumber.innerHTML = rdm;
-   return rdm    
+    rdmNumber.innerHTML = rdm;
+    rdmNumber.classList.add('timer')
+    return rdm
 }

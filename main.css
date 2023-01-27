@@ -45,6 +45,7 @@
     text-align: center;
 }
 #rdm {
+    opacity: 0;
     width: 150px;
     position: fixed;
     top: 148px;
@@ -59,6 +60,11 @@
     letter-spacing: 3px;
     z-index: 1000000;
     text-align: center;
+    transition: opacity 2s;
+}
+#rdm.timer {
+    opacity: 1;
+    transition: opacity 2s;
 }
 #go {
     width: 150px;
