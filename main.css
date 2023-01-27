@@ -1,0 +1,78 @@
+#monBtn {
+    width: 150px;
+    position: fixed;
+    top: 4px;
+    left: 20px;
+    border: solid 3px #0072b1;
+    background-color: #eef3f8;
+    color: rgba(0,0,0,0.6);
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 7px 15px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    z-index: 1000000;
+}
+#monBtn2 {
+    width: 150px;
+    position: fixed;
+    top: 52px;
+    left: 20px;
+    border: solid 3px #0072b1;
+    background-color: #eef3f8;
+    color: rgba(0,0,0,0.6);
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 7px 15px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    z-index: 1000000;
+}
+#stop {
+     width: 150px;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    border: solid 3px #0072b1;
+    background-color: #eef3f8;
+    color: rgba(0,0,0,0.6);
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 7px 15px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    z-index: 1000000;
+    text-align: center;
+}
+#rdm {
+    width: 150px;
+    position: fixed;
+    top: 148px;
+    left: 20px;
+    border: solid 3px #0072b1;
+    background-color: #eef3f8;
+    color: rgba(0,0,0,0.6);
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 7px 15px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    z-index: 1000000;
+    text-align: center;
+}
+#go {
+    width: 150px;
+    position: fixed;
+    top: 200px;
+    left: 20px;
+    border: solid 3px #0072b1;
+    background-color: #eef3f8;
+    color: rgba(0,0,0,0.6);
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 7px 15px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    z-index: 1000000;
+    text-align: center;
+}
