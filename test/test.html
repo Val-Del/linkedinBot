@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="test.css">
 </head>
-<body ng-app="myApp" ng-controller="myController">
-    <filter-slider min="0" max="100" get-values="getValue(min, max)"></filter-slider>
-    <br>
-    min: {{min}}
-    <br>
-    max: {{max}}
+
+<body>
+    <!-- <div class="flex">
+        <label for="min-range">Interval minimum</label>
+        <input type="range" id="min-range" min="0" max="5" step="1" value="3" onchange="">
+    </div>
+    <div class="flex">
+        <input type="range" id="max-range" min="0" max="5" value="3">
+        <label for="max-range">Interval maximum</label>
+    </div> -->
+    <script src="test.js"></script>
 </body>
+
 </html>

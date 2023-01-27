@@ -1,58 +1,13 @@
-body {
-    position: relative;
-    height: 60px;
-    padding-top: 20px;
-    .slider-bar {
-        position: relative;
-        width: 50%;
-        height: 5px;
-        background: #DDD;
-        margin: auto;
-        border-radius: 10px;
-        .selected {
-            position: absolute;
-            background: #0089CF;
-            height: 5px;
-            left: 0;
-            right: 0;
-        }
-        .slider-bar-selector {
-            position: absolute;
-            height: 25px;
-            width: 25px;
-            background: #0089CF;
-            border-radius: 50%;
-            top: -10px;
-            cursor: col-resize;
-            &.min {
-                left: 0;
-            }
-            &.max {
-                right: 0;
-            }
-        }
-    }
-    .slider-value {
-        position: absolute;
-        font-size: 0.8em;
-        top: 35px;
-        &.min {
-            left: 10px;
-        }
-        &.max {
-            right: 10px;
-        }
-    }
-    .min-value,
-    .max-value {
-        position: absolute;
-        top: 10px;
-        font-size: 0.8em;
-    }
-    .min-value {
-        left: -5px;
-    }
-    .max-value {
-        right: -5px;
-    }
+.flex {
+    display: flex;
+}
+
+.inputSliderMin{
+    margin-right: -3px;
+    background-color: aqua;
+}
+
+.inputSliderMax{
+    margin-left: -3px;
+    direction: rtl;
 }
