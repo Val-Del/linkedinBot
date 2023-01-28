@@ -22,9 +22,8 @@ btnAdd.onclick = function () {
                     buttons = document.querySelectorAll('.artdeco-modal__content footer .artdeco-button__text');
                 }
                 buttons[index++].click();
-                console.log(inputSliderMin.value)
                 timeOut()
-            }, random(2000, 3000))
+            }, random(1000, 2000))
         } else {
             rdmNumber.innerHTML = "Arrêt";
         }
@@ -72,12 +71,17 @@ stop.onclick = function () {
 }
 document.body.appendChild(stop);
 
-function random(min, max) {
-    max = inputSliderMin.value +100
+function random() {
+    min = inputSliderMin.value * 1000
+    console.log(min)
+    max = inputSliderMax.value * 1000
+    console.log(max)
     let rdm = 0
+
     rdm = Math.floor(Math.random() * (max - min + 1) + min)
     rdm = Math.floor(rdm/100)*100; //arrondir ex : 5112 > 5100 
     decreaseTimer(rdm)
+    console.log(rdm)
     return rdm
 }
 function decreaseTimer(timer){
@@ -86,7 +90,7 @@ function decreaseTimer(timer){
         let chrono = setInterval(() => {
             if (keepGoing === true) {
                 if (timer<100) {
-                    divTimer.innerHTML = 0;
+                    rdmNumber.innerHTML = 0;
                     clearInterval(chrono);
                 }else {
                     timer -= 100;
@@ -100,39 +104,71 @@ function decreaseTimer(timer){
     
 }
 
-let containerSlider = document.createElement("div");
-containerSlider.classList.add('containerSlider');
-containerSlider.classList.add('flex');
-containerSlider.setAttribute('title', 'Interval maximum');
-document.body.appendChild(containerSlider);
+let containerSliderMax = document.createElement("div");
+containerSliderMax.classList.add('containerSliderMax');
+containerSliderMax.classList.add('flex');
+containerSliderMax.setAttribute('title', 'Interval maximum');
+document.body.appendChild(containerSliderMax);
+
+let labelSliderMax = document.createElement("label");
+labelSliderMax.classList.add('labelSliderMax');
+labelSliderMax.innerHTML = "5s"
+containerSliderMax.appendChild(labelSliderMax);
+
+let inputSliderMax = document.createElement("input")
+inputSliderMax.classList.add('inputSlider');
+inputSliderMax.type = "range";
+inputSliderMax.value = 5;
+inputSliderMax.max = 12;
+inputSliderMax.min = 0;
+inputSliderMax.step = 1;
+inputSliderMax.oninput = function () {
+    labelSliderMax.innerHTML = this.value + "s";
+}
+containerSliderMax.appendChild(inputSliderMax);
+
+let btnSetting =document.createElement("div");
+btnSetting.classList.add('btnSettings');
+containerSliderMax.appendChild(btnSetting);
+
+btnSetting.addEventListener('click', function(event) {
+    containerSliderMax.classList.toggle('clicked');
+});
+
+//interval minimum
+let containerSliderMin = document.createElement("div");
+containerSliderMin.classList.add('containerSliderMin');
+containerSliderMin.classList.add('flex');
+containerSliderMin.setAttribute('title', 'Interval minimum');
+document.body.appendChild(containerSliderMin);
 
 let labelSliderMin = document.createElement("label");
 labelSliderMin.classList.add('labelSliderMin');
-labelSliderMin.innerHTML = "5s"
-containerSlider.appendChild(labelSliderMin);
+labelSliderMin.innerHTML = "3s"
+containerSliderMin.appendChild(labelSliderMin);
 
 let inputSliderMin = document.createElement("input")
 inputSliderMin.classList.add('inputSlider');
 inputSliderMin.type = "range";
-inputSliderMin.value = 5;
+inputSliderMin.value = 3;
 inputSliderMin.max = 12;
 inputSliderMin.min = 0;
 inputSliderMin.step = 1;
 inputSliderMin.oninput = function () {
     labelSliderMin.innerHTML = this.value + "s";
 }
-containerSlider.appendChild(inputSliderMin);
+containerSliderMin.appendChild(inputSliderMin);
 
-let btnSetting =document.createElement("div");
-btnSetting.classList.add('btnSettings');
-containerSlider.appendChild(btnSetting);
-
-
-btnSetting.addEventListener('click', function(event) {
-  containerSlider.classList.toggle('clicked');
+let btnSettingMin =document.createElement("div");
+btnSettingMin.classList.add('btnSettings');
+containerSliderMin.appendChild(btnSettingMin);
+// /
+btnSettingMin.addEventListener('click', function(event) {
+  containerSliderMin.classList.toggle('clicked');
 });
 
 function isModalOpen(){
+    // console.log(document.body.classList.contains("artdeco-modal-is-open"))
    return document.body.classList.contains("artdeco-modal-is-open")
 }
 
