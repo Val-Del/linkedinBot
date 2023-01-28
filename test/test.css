@@ -19,6 +19,7 @@
     position: fixed;
     left: -158px;
     transition: all 0.8s;
+    
 }
 .containerSlider.clicked{
     left: 0;
@@ -27,7 +28,7 @@
     width: 24px;
     height: 24px;
     margin-left: 4px;
- 
+    background-image: url('https://cdn-icons-png.flaticon.com/512/484/484613.png');
      background-size: cover;
     cursor: pointer;
 }

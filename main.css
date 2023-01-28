@@ -116,11 +116,14 @@
     margin-left: 5px;
     align-items: center;
     position: fixed;
-    left: -158px;
+    left: -161px;
     /* left: 0; */
     top: 199px;
     transition: all 0.5s;
     z-index: 1000000;
+    background-color: rgb(165, 165, 164);
+    padding: 4px;
+    border-radius: 5px;
 }
 .containerSlider.clicked{
     left: 5px;
