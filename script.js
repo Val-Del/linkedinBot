@@ -123,8 +123,16 @@ inputSliderMax.max = 12;
 inputSliderMax.min = 0;
 inputSliderMax.step = 1;
 inputSliderMax.oninput = function () {
+    
+    if (parseInt(this.value) < parseInt(inputSliderMin.value)) {
+        inputSliderMin.value = this.value;
+        labelSliderMin.innerHTML = inputSliderMax.value + "s";
+    }
     labelSliderMax.innerHTML = this.value + "s";
+    
 }
+
+
 containerSliderMax.appendChild(inputSliderMax);
 
 let btnSetting =document.createElement("div");
@@ -155,12 +163,12 @@ inputSliderMin.max = 12;
 inputSliderMin.min = 0;
 inputSliderMin.step = 1;
 inputSliderMin.oninput = function () {
-    // console.log(this.value)
-    // console.log(inputSliderMax.value)
-    // if (this.value>inputSliderMax.value) {
-    //     inputSliderMax.value = this.value;
-    //     console.log('in loop')
-    // }
+    console.log(this.value)
+    console.log(inputSliderMax.value)
+    if (parseInt(this.value) > parseInt(inputSliderMax.value)) {
+        inputSliderMax.value = this.value;
+        console.log('in loop')
+    }
     labelSliderMin.innerHTML = this.value + "s";
     labelSliderMax.innerHTML = inputSliderMax.value + "s";
 }
