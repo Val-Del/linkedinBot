@@ -155,6 +155,15 @@ inputSliderMin.max = 12;
 inputSliderMin.min = 0;
 inputSliderMin.step = 1;
 inputSliderMin.oninput = function () {
+    console.log(this.value)
+    console.log(inputSliderMax.value)
+    if (this.value>inputSliderMax.value) {
+        inputSliderMax.value = this.value;
+        labelSliderMax.innerHTML = inputSliderMax.value + "s";
+        console.log(this.value)
+        console.log(inputSliderMax.value)
+
+    }
     labelSliderMin.innerHTML = this.value + "s";
 }
 containerSliderMin.appendChild(inputSliderMin);
