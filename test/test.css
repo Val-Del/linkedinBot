@@ -2,13 +2,32 @@
     display: flex;
 }
 
-.inputSliderMin{
-    margin-right: -3px;
+.inputSlider{
     background-color: aqua;
-    direction: rtl;
+    
+    /* max-width: fit-content; */
+  /*  */
 }
 
-.inputSliderMax{
-    margin-left: -3px;
-    
+.labelSliderMin {
+    min-width: 23px;
+    font-weight: 600;
+}
+.containerSlider{
+    margin-left: 5px;
+    align-items: center;
+    position: fixed;
+    left: -158px;
+    transition: all 0.8s;
+}
+.containerSlider.clicked{
+    left: 0;
+}
+.btnSettings{
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+    background-image: url('./settings.png');
+     background-size: cover;
+    cursor: pointer;
 }
