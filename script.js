@@ -16,7 +16,7 @@ btnAdd.onclick = function () {
     var buttons = document.querySelectorAll('.artdeco-modal__content footer .artdeco-button__text');
     var index = 0;
     function timeOut() {
-        if (keepGoing === true) {
+        if (keepGoing === true && isModalOpen()==true) {
             setTimeout(() => {
                 if (buttons[index] == undefined) {
                     buttons = document.querySelectorAll('.artdeco-modal__content footer .artdeco-button__text');
@@ -24,7 +24,7 @@ btnAdd.onclick = function () {
                 buttons[index++].click();
                 console.log(inputSliderMin.value)
                 timeOut()
-            }, random(1000, 2000))
+            }, random(2000, 3000))
         } else {
             rdmNumber.innerHTML = "Arrêt";
         }
@@ -103,6 +103,7 @@ function decreaseTimer(timer){
 let containerSlider = document.createElement("div");
 containerSlider.classList.add('containerSlider');
 containerSlider.classList.add('flex');
+containerSlider.setAttribute('title', 'Interval maximum');
 document.body.appendChild(containerSlider);
 
 let labelSliderMin = document.createElement("label");
@@ -110,7 +111,6 @@ labelSliderMin.classList.add('labelSliderMin');
 labelSliderMin.innerHTML = "5s"
 containerSlider.appendChild(labelSliderMin);
 
-let updatedSliderMin;
 let inputSliderMin = document.createElement("input")
 inputSliderMin.classList.add('inputSlider');
 inputSliderMin.type = "range";
@@ -132,4 +132,7 @@ btnSetting.addEventListener('click', function(event) {
   containerSlider.classList.toggle('clicked');
 });
 
+function isModalOpen(){
+   return document.body.classList.contains("artdeco-modal-is-open")
+}
 
