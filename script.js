@@ -1,4 +1,4 @@
-let rdm = 0
+
 let keepGoing = true
 
 let rdmNumber = document.createElement("p");
@@ -22,8 +22,9 @@ btnAdd.onclick = function () {
                     buttons = document.querySelectorAll('.artdeco-modal__content footer .artdeco-button__text');
                 }
                 buttons[index++].click();
+                console.log(inputSliderMin.value)
                 timeOut()
-            }, random(4000, 9000))
+            }, random(1000, 2000))
         } else {
             rdmNumber.innerHTML = "Arrêt";
         }
@@ -59,6 +60,7 @@ btnDelete.onclick = function () {
 };
 document.body.appendChild(btnDelete);
 
+
 let stop = document.createElement("button");
 stop.innerHTML = "Stop";
 stop.type = "submit";
@@ -71,30 +73,63 @@ stop.onclick = function () {
 document.body.appendChild(stop);
 
 function random(min, max) {
+    max = inputSliderMin.value +100
+    let rdm = 0
     rdm = Math.floor(Math.random() * (max - min + 1) + min)
     rdm = Math.floor(rdm/100)*100; //arrondir ex : 5112 > 5100 
     decreaseTimer(rdm)
-    
     return rdm
 }
 function decreaseTimer(timer){
-    if (keepGoing === true) {
         rdmNumber.classList.add('timer')
         rdmNumber.innerHTML = timer;
         let chrono = setInterval(() => {
             if (keepGoing === true) {
-                timer -= 100;
-                rdmNumber.innerHTML = timer;
                 if (timer<100) {
                     divTimer.innerHTML = 0;
                     clearInterval(chrono);
-                }
-            }else {
+                }else {
+                    timer -= 100;
+                    rdmNumber.innerHTML = timer;
+                }   
+            } else {
                 clearInterval(chrono);
-            }
-            
+            }     
+                
         }, 100);
-    }else{
-        clearInterval(chrono);
-    }
+    
 }
+
+let containerSlider = document.createElement("div");
+containerSlider.classList.add('containerSlider');
+containerSlider.classList.add('flex');
+document.body.appendChild(containerSlider);
+
+let labelSliderMin = document.createElement("label");
+labelSliderMin.classList.add('labelSliderMin');
+labelSliderMin.innerHTML = "5s"
+containerSlider.appendChild(labelSliderMin);
+
+let updatedSliderMin;
+let inputSliderMin = document.createElement("input")
+inputSliderMin.classList.add('inputSlider');
+inputSliderMin.type = "range";
+inputSliderMin.value = 5;
+inputSliderMin.max = 12;
+inputSliderMin.min = 0;
+inputSliderMin.step = 1;
+inputSliderMin.oninput = function () {
+    labelSliderMin.innerHTML = this.value + "s";
+}
+containerSlider.appendChild(inputSliderMin);
+
+let btnSetting =document.createElement("div");
+btnSetting.classList.add('btnSettings');
+containerSlider.appendChild(btnSetting);
+
+
+btnSetting.addEventListener('click', function(event) {
+  containerSlider.classList.toggle('clicked');
+});
+
+
