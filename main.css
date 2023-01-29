@@ -2,7 +2,7 @@
     width: 150px;
     position: fixed;
     top: 4px;
-    left: 20px;
+    left: 22px;
     border: solid 3px #0072b1;
     background-color: #eef3f8;
     color: rgba(0,0,0,0.6);
@@ -17,7 +17,7 @@
     width: 150px;
     position: fixed;
     top: 100px;
-    left: 20px;
+    left: 22px;
     border: solid 3px #0072b1;
     background-color: #eef3f8;
     color: rgba(0,0,0,0.6);
@@ -32,7 +32,7 @@
      width: 150px;
     position: fixed;
     top: 52px;
-    left: 20px;
+    left: 22px;
     border: solid 3px #0072b1;
     background-color: #eef3f8;
     color: rgba(0,0,0,0.6);
@@ -49,7 +49,7 @@
     width: 150px;
     position: fixed;
     top: 148px;
-    left: 20px;
+    left: 22px;
     border: solid 3px #0072b1;
     background-color: #eef3f8;
     color: rgba(0,0,0,0.6);
@@ -70,7 +70,7 @@
     width: 150px;
     position: fixed;
     top: 200px;
-    left: 20px;
+    left: 22px;
     border: solid 3px #0072b1;
     background-color: #eef3f8;
     color: rgba(0,0,0,0.6);
@@ -81,4 +81,62 @@
     letter-spacing: 3px;
     z-index: 1000000;
     text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.labelSliderMax, .inputSlider{
+    /* background-color: aqua; */
+    border: none;
+    outline: none;
+    box-shadow: none;
+    /* max-width: fit-content; */
+  /*  */
+}
+.labelSliderMax::selection , .inputSlider:selection{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.labelSliderMax::hover , .inputSlider:hover{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.labelSliderMax, .labelSliderMin {
+    min-width: 23px;
+    font-weight: 600;
+    margin: 0;
+    margin-left: 2 px;
+}
+.containerSliderMax, .containerSliderMin{
+    margin-left: 5px;
+    align-items: center;
+    position: fixed;
+    left: -161px;
+    /* left: 0; */
+    top: 199px;
+    transition: all 0.5s;
+    z-index: 1000000;
+    background-color: rgb(165, 165, 164);
+    padding: 4px;
+    border-radius: 5px;
+}
+.containerSliderMax{
+    top: 230px;
+}
+
+.containerSliderMax.clicked, .containerSliderMin.clicked {
+    left: 5px;
+}
+.btnSettings{
+    width: 28px;
+    height: 28px;
+    margin-left: 4px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/484/484613.png');
+     background-size: cover;
+    cursor: pointer;
 }
